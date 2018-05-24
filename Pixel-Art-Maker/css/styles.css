@@ -28,11 +28,13 @@ table {
 }
 
 tr {
-  height: 20px;
+  height: 0;
 }
 
 td {
-  width: 20px;
+  height: 50px;
+  width: 50px;
+
 }
 
 input[type="number"] {
