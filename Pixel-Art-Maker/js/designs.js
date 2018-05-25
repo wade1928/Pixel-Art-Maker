@@ -15,7 +15,7 @@ document.getElementById('sizePicker').addEventListener('submit', function() {
 // When size is submitted by the user, call makeGrid()
 
 function makeGrid(gridWidth, gridHeight) {
-	$( "#pixelCanvas" ).empty();
+	$("#pixelCanvas").empty();
 	for (let i = 0; i < gridHeight; i++) {
 		const newRow = document.createElement('tr');
 		const gridTable = document.getElementById("pixelCanvas")
@@ -23,7 +23,7 @@ function makeGrid(gridWidth, gridHeight) {
 		for (let j = 0; j < gridWidth; j++) {
 			const newColumn = document.createElement('td')
 			//var x = document.querySelector("#pixelCanvas").rows[j].addEventListener('click', changeBackground())
-			gridTable.appendChild(newColumn);
+			newRow.appendChild(newColumn);
 
 		}
 	}
@@ -37,9 +37,3 @@ $('body').on('click', 'td', function() {
 	$(this).css('background-color', color);
 });
 
-function clearGrid() {
-	document.getElementById('sizePicker').addEventListener('submit', function() {
-		const removeTable = document.body.removeChild('table')
-
-	})
-}
