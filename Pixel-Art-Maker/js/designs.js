@@ -15,9 +15,10 @@ document.getElementById('sizePicker').addEventListener('submit', function() {
 // When size is submitted by the user, call makeGrid()
 
 function makeGrid(gridWidth, gridHeight) {
+	$( "#pixelCanvas" ).empty();
 	for (let i = 0; i < gridHeight; i++) {
 		const newRow = document.createElement('tr');
-		const gridTable = document.querySelector('#pixelCanvas');
+		const gridTable = document.getElementById("pixelCanvas")
 		gridTable.appendChild(newRow);
 		for (let j = 0; j < gridWidth; j++) {
 			const newColumn = document.createElement('td')
@@ -33,5 +34,12 @@ function makeGrid(gridWidth, gridHeight) {
 
 $('body').on('click', 'td', function() {
 	var color = document.getElementById('colorPicker').value;
-    $(this).css('background-color', color);
+	$(this).css('background-color', color);
 });
+
+function clearGrid() {
+	document.getElementById('sizePicker').addEventListener('submit', function() {
+		const removeTable = document.body.removeChild('table')
+
+	})
+}
