@@ -1,4 +1,5 @@
 // Select color input
+
 // Select size input
 
 document.getElementById("sizePicker").addEventListener("submit", function(event) {
@@ -19,8 +20,18 @@ function makeGrid(gridWidth, gridHeight) {
 		const gridTable = document.querySelector('#pixelCanvas');
 		gridTable.appendChild(newRow);
 		for (let j = 0; j < gridWidth; j++) {
-			const newColumn = document.createElement('td');
+			const newColumn = document.createElement('td')
+			//var x = document.querySelector("#pixelCanvas").rows[j].addEventListener('click', changeBackground())
 			gridTable.appendChild(newColumn);
+
 		}
 	}
+
+
 }
+
+
+$('body').on('click', 'td', function() {
+	var color = document.getElementById('colorPicker').value;
+    $(this).css('background-color', color);
+});
